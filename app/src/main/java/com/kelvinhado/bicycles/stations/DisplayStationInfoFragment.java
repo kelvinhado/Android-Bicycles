@@ -157,7 +157,7 @@ public class DisplayStationInfoFragment extends Fragment {
             // adding marker
             googleMap.addMarker(marker);
             CameraPosition cameraPosition = new CameraPosition.Builder()
-                    .target(globePosition).zoom(20).build();
+                    .target(globePosition).zoom(13).build();
             googleMap.animateCamera(CameraUpdateFactory
                     .newCameraPosition(cameraPosition));
 
