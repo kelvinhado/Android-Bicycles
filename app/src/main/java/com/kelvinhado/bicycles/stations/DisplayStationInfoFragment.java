@@ -38,18 +38,6 @@ public class DisplayStationInfoFragment extends Fragment {
         // Required empty public constructor
     }
 
-
-    public static DisplayStationInfoFragment newInstance(Station station) {
-        DisplayStationInfoFragment fragment = new DisplayStationInfoFragment();
-        Bundle args = new Bundle();
-        args.putInt(Tags.TAG_STATION_NUMBER, station.number);
-        args.putString(Tags.TAG_STATION_CONTRACT_NAME, station.contract_name);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -107,6 +95,19 @@ public class DisplayStationInfoFragment extends Fragment {
         mMapView.onLowMemory();
     }
 
+
+    /*
+        This part is assign to the update of the fragment
+     */
+
+    public static DisplayStationInfoFragment newInstance(Station station) {
+        DisplayStationInfoFragment fragment = new DisplayStationInfoFragment();
+        Bundle args = new Bundle();
+        args.putInt(Tags.TAG_STATION_NUMBER, station.number);
+        args.putString(Tags.TAG_STATION_CONTRACT_NAME, station.contract_name);
+        fragment.setArguments(args);
+        return fragment;
+    }
     public void updateStation(int stationNumber, String stationContractName) {
 
         StationRequest stationRequest = new StationRequest(stationNumber, stationContractName,
